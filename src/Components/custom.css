@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.Container{
+    background-color: rgb(219, 82, 77);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.Main-Card{
+    background-color: rgb(246, 246, 246, 0.12) ;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    align-self: center;
+    margin-top: 45px;
+    
+}
+
+.Nav{
+    width: 650px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    box-shadow: 0px 2px rgb(68, 68, 68, 0.1);
+}
+
+.Logo{
+    display: flex;
+    color: white;
+    align-items: flex-start;
+    padding: 20px 20px 20px 0px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.Nav-icons{
+    
+    
+}
+
+.list-box{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin-left: 200px;
+}
+
+.list-box li{
+    display: flex;
+    font-size: 15px;
+    color: white;
+    margin-left: 10px;
+    background-color: rgba(248, 245, 245, 0.15);
+    padding: 5px;
+    border-radius: 5px;
+    padding-right: 15px;
+}
+
+
+.list-box img{
+    margin-right: 7px;
+    width: 20px;
+    height: 20px;
+}
+
+.card-options{
+    display: flex;
+    justify-content: center;
+}
+
+.card-options ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+/* Have to sort this out */
+
+.card-options li{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 5px 10px 5px 10px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.timer{
+    color: white;
+    font-size: 125px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+.start-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.start-btn button{
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
+    color: rgb(219, 82, 77);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 7px 20px rgba(101, 101, 101, 0.3);
+
+}
+
+.df-c{
+    display: flex;
+    flex-direction: column;
+}
+.jc-c{
+    justify-content: center;
+}
+.ai-c{
+    align-items: center;
+}
