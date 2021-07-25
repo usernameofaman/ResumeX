@@ -45,23 +45,25 @@ const WorkExperience = styled.div`
 `
 const CompanyTitle = styled.span`
     font-family: 'Raleway', sans-serif;
-    margin-top: 20px;
-    font-weight: 400;
-    width: 100%;
+    font-weight: 600;
+    /* width: 100%; */
 `
 const ProfileTitle = styled.span`
     font-family: 'Raleway', sans-serif;
-    margin-top: 20px;
     font-weight: 400;
-    width: 100%;
+    margin-left: 10px;
 `
 const WorkDetails = styled.div`
     display:flex;
-    width:100%
+    /* width:100%; */
+`
+const ProfileDetails = styled.div`
+    /* display:flex; */
+    width:100%;
 `
 
 
-const useStyles = makeStyles((theme) =>({
+const useStyles = makeStyles((theme) => ({
     divider: {
         backgroundColor: "#334257",
         marginTop: "5px",
@@ -71,15 +73,18 @@ const useStyles = makeStyles((theme) =>({
         backgroundColor: "transparent",
         display: 'flex',
         height: 390,
-      },
-      tabs: {
+    },
+    tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
         // width: 130,
-      },
-      tabsLeft:{
-          height: "130px",
-          textTransform: "none",
-      },
+    },
+    tabsLeft: {
+        height: "130px",
+        textTransform: "none",
+    },
+    tabsRight: {
+        width: 540,
+    }
 }))
 
 export default function Introduction() {
@@ -87,7 +92,7 @@ export default function Introduction() {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
-      setValue(newValue);
+        setValue(newValue);
     };
 
     return (
@@ -96,7 +101,7 @@ export default function Introduction() {
                 <Name variant="h1">Aman<Lastname>Sharma</Lastname></Name>
                 <Title>MERN STACK DEVELOPER</Title>
                 <AboutMe>
-                    My name is Aman Sharma, I am a Full Stack Developer. I started my programming
+                    My name is Aman Sharma, I am having 1+ years of experience as Full Stack Developer. I started my programming
                     journey with C++, where I got to learn the fundamentals. Currently I am working
                     as a MERN Stack Developer. I like developing front-end, as I love when I can visually
                     express my work.
@@ -113,26 +118,35 @@ export default function Introduction() {
                         onChange={handleChange}
                         aria-label="Vertical tabs example"
                         className={classes.tabs}
-                        TabIndicatorProps={{style: {background:'#334257'}}}
+                        TabIndicatorProps={{ style: { background: '#334257' } }}
                     >
                         <Tab className={classes.tabsLeft} label="2021- Date.now()" {...a11yProps(0)} />
                         <Tab className={classes.tabsLeft} label="2020-2021" {...a11yProps(1)} />
-                        <Tab className={classes.tabsLeft} label="" {...a11yProps(2)} />
+                        <Tab className={classes.tabsLeft} label="2020-2020" {...a11yProps(2)} />
                     </Tabs>
-                    <TabPanel value={value} index={0}>
+                    <TabPanel className={classes.tabsRight} value={value} index={0}>
                         <WorkDetails>
-                            <CompanyTitle>LEEWAYHERTZ TECHNOLOGIES -</CompanyTitle> 
+                            <CompanyTitle>LEEWAYHERTZ TECHNOLOGIES -</CompanyTitle>
+                            <ProfileTitle> Full Stack Developer </ProfileTitle>
+                        </WorkDetails>
+                        <ProfileDetails> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Officiis laboriosam ab veniam debitis ex, culpa non sapiente?
+                            Ipsum omnis cum quibusdam mollitia, iure architecto ratione,
+                            nihil autem cumque nemo recusandae. </ProfileDetails>
+                    </TabPanel>
+                    <TabPanel className={classes.tabsRight} value={value} index={1}>
+                        <WorkDetails>
+                            <CompanyTitle>XEBDOT TECHNOLOGIES -</CompanyTitle>
+                            <ProfileTitle> MERN Stack Trainee </ProfileTitle>
+                        </WorkDetails>
+                    </TabPanel>
+                    <TabPanel className={classes.tabsRight} value={value} index={2}>
+                        <WorkDetails>
+                            <CompanyTitle>LEEWAYHERTZ TECHNOLOGIES -</CompanyTitle>
                             <ProfileTitle> Full Stack Developer </ProfileTitle>
                         </WorkDetails>
                     </TabPanel>
-                    <TabPanel value={value} index={1}>
-                        Item Two
-                    </TabPanel>
-                    <TabPanel value={value} index={2}>
-                        Item Three
-                    </TabPanel>
                 </div>
-
             </WorkExperience>
         </>
 
@@ -142,33 +156,33 @@ export default function Introduction() {
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-  
+
     return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`vertical-tabpanel-${index}`}
-        aria-labelledby={`vertical-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box p={3}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`vertical-tabpanel-${index}`}
+            aria-labelledby={`vertical-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
     );
-  }
-  
-  TabPanel.propTypes = {
+}
+
+TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
-  };
-  
-  function a11yProps(index) {
+};
+
+function a11yProps(index) {
     return {
-      id: `vertical-tab-${index}`,
-      'aria-controls': `vertical-tabpanel-${index}`,
+        id: `vertical-tab-${index}`,
+        'aria-controls': `vertical-tabpanel-${index}`,
     };
-  }
+}
