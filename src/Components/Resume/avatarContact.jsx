@@ -4,15 +4,52 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import GitHubIcon from '@material-ui/icons/GitHub';
 // Material UI
+import { withStyles } from "@material-ui/core/styles";
 import Popover from '@material-ui/core/Popover';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/core/styles";
-// import Card from "@material-ui/core/Card";
+import Dialog from "@material-ui/core/Dialog";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
+// import Card from "@material-ui/core/Card";
 // Google Map
 import GoogleMapReact from 'google-map-react';
 // Styled Components
 import styled from "styled-components";
+
+
+const styles = (theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(2)
+  },
+  closeButton: {
+    position: "absolute",
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500]
+  }
+});
+
+const DialogTitle = withStyles(styles)((props) => {
+  const { children, classes, onClose, ...other } = props;
+  return (
+    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+      <Typography variant="h6">{children}</Typography>
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          className={classes.closeButton}
+          onClick={onClose}
+        >
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </MuiDialogTitle>
+  );
+});
 
 const useStyles = makeStyles({
   card: {
@@ -54,15 +91,15 @@ const useStyles = makeStyles({
 
 
 const PhotoContainer = styled.div`
-  height: 110px;
-  width: 110px;
-  margin: 30px 50px 10px 0px;
+  height: 130px;
+  width: 130px;
+  margin: 30px 50px 30px 0px;
 `;
 const ProfilePicture = styled.img`
   border-radius: 50%;
   height: 100%;
   width: 100%;
-  filter: grayscale(10);
+  /* filter: grayscale(10); */
 `;
 const ContactSection = styled.div`
   display: flex;
@@ -87,9 +124,8 @@ const Map = ({ text }) => <div>{text}</div>;
 
 export default function AvatarContact() {
   const classes = useStyles();
-
+  // Address Pop Over
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const handleClick = (event) => {
     if (anchorEl === event.currentTarget) {
       console.log("Target")
@@ -103,12 +139,18 @@ export default function AvatarContact() {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
+  // GitHub PopOver
 
+  const [gitHub, setGitHub] = React.useState(false);
+
+  const handleGitHub = () => {
+    setGitHub(!gitHub);
+  };
 
   return (
     <div>
       <PhotoContainer>
-        <ProfilePicture src="/images/profile.jpg" alt="profile" />
+        <ProfilePicture src="/images/profile_3.jpg" alt="profile" />
       </PhotoContainer>
       <ContactSection>
         <Typography>Contact</Typography>
@@ -154,10 +196,25 @@ export default function AvatarContact() {
           <Typography className={classes.f12}>+91-9827858545</Typography>
         </FlexRow>
         <FlexRow>
-          <LocationOnIcon />
-          <Typography className={classes.f12}>
-            Vidisha, Madhya Pradesh
+        <Button className={`${classes.f12} ${classes.button}`} aria-controls="simple-menu" aria-haspopup="true"  onClick={handleGitHub}>
+          <GitHubIcon style={{ width: "20px", marginLeft:"3px"}} />
+          <Typography style={{ marginLeft: "10px" }} className={classes.f12}>
+            Github
           </Typography>
+          </Button>
+          <div>
+
+            <Dialog
+              onClose={handleGitHub}
+              aria-labelledby="customized-dialog-title"
+              open={gitHub}
+            >
+              <DialogTitle id="customized-dialog-title" onClose={handleGitHub}>
+                Github OverView
+              </DialogTitle>
+              Here we can write about Github Projects
+            </Dialog>
+          </div>
         </FlexRow>
         <FlexRow>
           <LocationOnIcon />
