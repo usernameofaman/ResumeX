@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     // minWidth: 275,
     width: "1000px",
     height: "1000px",
-    minWidth:"1000px",
+    minWidth: "1000px",
     padding: "0px 0px 0px 0px",
   },
   bullet: {
@@ -57,6 +57,9 @@ const MainContainer = styled.div`
   justify-content: center;
   background-color: #548CA8;
   padding-top: 20px;
+  @media(max-width:1200px){
+    display:none;
+  }
 `;
 const LeftPanel = styled.div`
   display: flex;
@@ -82,26 +85,42 @@ const Information = styled.div`
   right:100px;
 `
 
+const AltMessage = styled.div`
+  display:flex;
+  font-family: 'Raleway, sans-serif';
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32px;
+  height: 500px;
+  width: 100%;
+`
+
 export default function Tasker() {
   const classes = useStyles();
 
 
   return (
+    <>
     <MainContainer>
       <Information>
-        <Slide/>
+        <Slide />
       </Information>
-      <Card className={classes.card}>
-        <CardContent className={classes.cardContent}>
-          <LeftPanel>
-            <Avatar/>
-          </LeftPanel>
-          <RightPanel>
-            <Introduction/>
-          </RightPanel>
-        </CardContent>
-      </Card>
+        <Card className={classes.card}>
+          <CardContent className={classes.cardContent}>
+            <LeftPanel>
+              <Avatar />
+            </LeftPanel>
+            <RightPanel>
+              <Introduction />
+            </RightPanel>
+          </CardContent>
+        </Card>
     </MainContainer>
+    <AltMessage>
+      The Content can only be viewed on <p> Large Screen Devices</p> <p>  i.e. Laptop/Desktop</p>
+    </AltMessage>
+    </>
   );
 }
 

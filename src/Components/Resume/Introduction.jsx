@@ -203,7 +203,7 @@ export default function Introduction() {
             <Header>
                 <Name variant="h1">Aman<Lastname>Sharma</Lastname></Name>
                 <Title>
-                    <AnchorLinkTitle href="https://www.mongodb.com/mern-stack" target="_blank">
+                    <AnchorLinkTitle href="https://www.geeksforgeeks.org/mern-stack/" target="_blank">
                         MERN STACK DEVELOPER
                     </AnchorLinkTitle>
                     <MiniIcons src="/images/react.svg" />
@@ -258,8 +258,8 @@ export default function Introduction() {
                             TabIndicatorProps={{ style: { background: '#334257' } }}
                         >
                             <Tab className={classes.tabsLeft} label="2021.05 - Date.now()" {...a11yProps(0)} />
-                            <Tab className={classes.tabsLeft} label="2020-2021" {...a11yProps(1)} />
-                            <Tab className={classes.tabsLeft} label="2020-2020" {...a11yProps(2)} />
+                            <Tab className={classes.tabsLeft} label="2020.09-2021.05" {...a11yProps(1)} />
+                            <Tab className={classes.tabsLeft} label="2020.08-2020.02" {...a11yProps(2)} />
                         </Tabs>
                         <TabPanel className={classes.tabsRight} value={value} index={0}>
                             <WorkDetails>
@@ -367,7 +367,7 @@ export default function Introduction() {
                                     <li>Work ethics</li>
                                     <li>Empath</li>
                                     <li>Patience</li>
-                                    <li>Self-Control.</li>
+                                    <li>Self-Control</li>
                                 </ul>
                             </ProfileDetails>
                         </TabPanel>
@@ -399,14 +399,12 @@ export default function Introduction() {
                             <ProfileDetails>
                                 Completed Masters with 9.2 CGPA and participated in various events and hackathons during
                                 my two years masters journey. I learned about <b> Algorithm and Design, System Design,
-                                    Data Structures, Automata, Computer Networking and much more.</b> Due to covid, I had enourmous
-                                time in my hand, which I utilized to refine my skills on the topics and practical implementation
-                                of Web Developement.
+                                    Data Structures, Automata, Computer Networking and much more.</b>
 
                                 <br />
                                 <div>
                                     <b>Certifications</b>
-                                    <ul>
+                                    {/* <ul> */}
                                         <li>
                                             <AnchorLinks href="https://googlecloudcertified.credential.net/profile/d91945ea426f998f6e4c53868a6f4971d358026e" target="_blank">
 
@@ -420,11 +418,11 @@ export default function Introduction() {
                                             </AnchorLinks>
 
                                         </li>
-                                    </ul>
+                                    {/* </ul> */}
                                 </div>
                                 <div>
                                     <b>Projects</b>
-                                    <ul>
+                                    {/* <ul> */}
                                         <li>
                                             PlacementBuddy - Interactive study material web app for placement.
                                             created with <b> Django-Python, HTML CSS.</b>
@@ -433,7 +431,7 @@ export default function Introduction() {
                                             Feeders - E-FoodDonation web app, can take request from user to pick up
                                             food from his/her location.<b> Android App with Android Studio, Java.</b>
                                         </li>
-                                    </ul>
+                                    {/* </ul> */}
                                 </div>
                             </ProfileDetails>
                         </TabPanel>
@@ -448,9 +446,7 @@ export default function Introduction() {
                             </WorkDetails>
                             <ProfileDetails>
                                 There is nothing much to tell about my graduation, Though I did learn about
-                                <b> Fundamentals of Computers, Operating Systems ,Multimedia Systems,
-                                    Understanding Organisational Behaviour, Data and Database Management Systems, Web-Based Application Development
-                                    Computer Lab and Practical Work </b>
+                                <b> Fundamentals of Computers, Operating Systems ,Multimedia Systems </b>
                                 here while doing my graduation.
                                 <div style={{ display: "flex" }}>
                                     <div>
@@ -494,6 +490,9 @@ export default function Introduction() {
                         </TabPanel>
                     </div> : ""}
             </WorkExperience>
+            <br />
+            <br />
+            <br />
             <WorkExperience>
                 <Title>Certifications</Title>
                 <li>
@@ -522,7 +521,7 @@ export default function Introduction() {
                 <ClickAwayListener onClickAway={handleClickAwayEvent}>
                     <div style={{ width: "100%" }}>
                         <ProjectBox className={classes.gitButton} onClick={handleClickEvent}>
-                            PROJECTS >>>>>>>>>>>>>>>>>>
+                            PROJECTS
                         </ProjectBox>
                         {github ? (
                             <ClickAwayBox>

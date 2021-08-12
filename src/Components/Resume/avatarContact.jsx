@@ -146,7 +146,7 @@ export default function AvatarContact() {
         <FlexRow onClick={handleClick} >
           <Button className={`${classes.f12} ${classes.button}`} aria-controls="simple-menu" aria-haspopup="true" >
             <LocationOnIcon />
-            Vidisha, Madhya Pradesh
+            Vidisha, MP
           </Button>
           <Popover
             id={id}
@@ -191,7 +191,9 @@ export default function AvatarContact() {
               <Button type="button" className={`${classes.f12} ${classes.button}`}  >
                 <GitHubIcon style={{ width: "20px", marginLeft: "3px" }} />
                 <Typography style={{ marginLeft: "10px" }} className={classes.f12}>
+                <AnchorLinks href="https://github.com/usernameofaman" target="_blank">
                   Github
+                  </AnchorLinks>
                 </Typography>
               </Button>
             </FlexRow>
@@ -220,7 +222,7 @@ export default function AvatarContact() {
         Firebase
         <Progress max={50} />
 
-        Fronend/UI/UX
+        Frontend/UI/UX
         <Progress max={75} />
 
         API Integration

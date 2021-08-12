@@ -10,10 +10,13 @@ const AnchorLinks = styled.a`
     text-decoration: none;
     cursor: pointer;
   color: #292929;
+  font-size: 15px;
 
-    transition:color 0.3s;
+
+    transition:font-size 0.3s;
     &:hover{
-        color: #4d4d4d
+        color: #4d4d4d;
+        font-size: 16px;
     }
 `
 
@@ -61,14 +64,14 @@ export default function SimpleSlide() {
                 </Fab>
                 <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
                     <Paper elevation={4} className={classes.paper}>
-                        This resume is created with : <br/>
+                        This resume is created with: <br/>
+                        <br/>
                         <b>ReactJS</b> <br/>
                         <b>Material UI </b> <br/>
                         <b>Styled Components</b> <br/>
                         <br/>
                         <br/>
-                        <br/>
-                        to see the <b>Source Code</b> <AnchorLinks href="https://github.com/usernameofaman/ResumeX">Click Here</AnchorLinks>
+                        <AnchorLinks href="https://github.com/usernameofaman/ResumeX">Checkout the Source code</AnchorLinks>
 
                     </Paper>
                 </Slide>
