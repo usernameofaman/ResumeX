@@ -3,6 +3,7 @@ import React from "react";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // Material UI
 // import { withStyles } from "@material-ui/core/styles";
 import Popover from '@material-ui/core/Popover';
@@ -19,6 +20,7 @@ import GoogleMapReact from 'google-map-react';
 import styled from "styled-components";
 import GitHubComponent from "./GitHub"
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Progress from '../common/progress'
 
 const ClickTrick = styled.div`
   position:fixed;
@@ -37,6 +39,14 @@ const ClickAwayBox = styled.div`
   border-radius: 5px;
   /* position: relative; */
 `
+const AnchorLinks = styled.a`
+    text-decoration: none;
+    cursor: pointer;
+    width:"100%";
+    color:white;
+    transition: 0.3s;
+
+`
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -45,8 +55,8 @@ const useStyles = makeStyles((theme) => ({
     height: "1000px",
     padding: "0px 10px 0px 0px",
   },
-  gitButton:{
-    width:"100%",
+  gitButton: {
+    width: "100%",
   },
   bullet: {
     display: "inline-block",
@@ -65,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px 10px 0px 0px",
   },
   f12: {
-    fontSize: "12px",
+    fontSize: "14px",
     textTransform: "none"
   },
   button: {
@@ -119,21 +129,8 @@ const FlexRow = styled.div`
 `;
 const SkillsSection = styled.div`
   margin-top: 30px;
+  padding-right: 10px;
 `
-const SkillBoxOuter = styled.div`
-  border: 1px solid #ffffff;
-  display: flex;
-  justify-content: flex-start;
-  height: 20px;
-  margin: 8px 10px 10px 0px;
-`
-const SkillBoxInner = styled.div`
-  background-color: #ffffff;
-  height: 80%;
-  margin: 2px 2px 2px 2px;
-  transition: width 0.3s;
-`
-
 
 const Map = ({ text }) => <div>{text}</div>;
 
@@ -199,7 +196,7 @@ export default function AvatarContact() {
               <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDzt1WeHjdV6czUufVqhvhLw7XGfgYZ5iU" }}
                 defaultCenter={{ lat: 23.525110, lng: 77.808136 }}
-                defaultZoom={11}
+                defaultZoom={8}
               >
                 <Map
                   lat={59.955413}
@@ -219,10 +216,10 @@ export default function AvatarContact() {
 
 
         <ClickAwayListener onClickAway={handleClickAwayEvent}>
-          <div style={{width:"100%"}}>
+          <div style={{ width: "100%" }}>
             <FlexRow className={classes.gitButton} onClick={handleClickEvent}>
-              <Button   type="button" className={`${classes.f12} ${classes.button}`}  >
-                <GitHubIcon  style={{ width: "20px", marginLeft: "3px" }} />
+              <Button type="button" className={`${classes.f12} ${classes.button}`}  >
+                <GitHubIcon style={{ width: "20px", marginLeft: "3px" }} />
                 <Typography style={{ marginLeft: "10px" }} className={classes.f12}>
                   Github
                 </Typography>
@@ -237,43 +234,37 @@ export default function AvatarContact() {
         </ClickAwayListener>
 
 
-
         <FlexRow>
-          <LocationOnIcon />
-          <Typography className={classes.f12}>
-            Vidisha, Madhya Pradesh
+          <LinkedInIcon />
+          <Typography style={{ marginLeft: "10px" }} className={classes.f12}>
+            <AnchorLinks href="https://linkedin.com/in/usernameofaman" target="_blank">
+              LinkedIn
+            </AnchorLinks>
           </Typography>
         </FlexRow>
       </ContactSection>
       <SkillsSection>
-              ReactJS
-          <SkillBoxOuter>
-            <SkillBoxInner style={{width: "80%"}}/>
-          </SkillBoxOuter>
-              NodeJS
-          <SkillBoxOuter>
-            <SkillBoxInner style={{width: "70%"}}/>
-          </SkillBoxOuter>
-              AWS Lamda Functions
-          <SkillBoxOuter>
-            <SkillBoxInner style={{width: "80%"}}/>
-          </SkillBoxOuter>
-              Firebase
-          <SkillBoxOuter>
-            <SkillBoxInner style={{width: "63%"}}/>
-          </SkillBoxOuter>
-              Fronend/UI/UX
-          <SkillBoxOuter>
-            <SkillBoxInner style={{width: "70%"}}/>
-          </SkillBoxOuter>
-              API Integration
-          <SkillBoxOuter>
-            <SkillBoxInner style={{width: "80%"}}/>
-          </SkillBoxOuter>
-              C++ / Java
-          <SkillBoxOuter>
-            <SkillBoxInner style={{width: "60%"}}/>
-          </SkillBoxOuter>
+        ReactJS
+        <Progress max={80} />
+
+        NodeJS
+        <Progress max={75} />
+
+        AWS Lamda Functions
+        <Progress max={65} />
+
+        Firebase
+        <Progress max={50} />
+
+        Fronend/UI/UX
+        <Progress max={75} />
+
+        API Integration
+        <Progress max={85} />
+
+        C++ / Java
+        <Progress max={60} />
+
       </SkillsSection>
 
 

@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import styled from "styled-components";
 import Avatar from "./avatarContact"
 import Introduction from "./Introduction";
+import Slide from '../common/slide'
 
 
 
@@ -74,7 +75,12 @@ const RightPanel = styled.div`
   padding: 0px 70px 0px 35px;
   /* width: 70%; */
 `
-
+const Information = styled.div`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right:100px;
+`
 
 export default function Tasker() {
   const classes = useStyles();
@@ -82,6 +88,9 @@ export default function Tasker() {
 
   return (
     <MainContainer>
+      <Information>
+        <Slide/>
+      </Information>
       <Card className={classes.card}>
         <CardContent className={classes.cardContent}>
           <LeftPanel>

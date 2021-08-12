@@ -70,6 +70,7 @@ const WorkDetails = styled.div`
 const ProfileDetails = styled.div`
     /* display:flex; */
     width:100%;
+    text-align: justify;
 `
 const AnchorLinks = styled.a`
     text-decoration: none;
@@ -141,7 +142,6 @@ export default function Introduction() {
     const [state, setState] = React.useState({
         checkedB: false,
     });
-    console.log(state)
 
     const handleSwitch = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
@@ -221,38 +221,38 @@ export default function Introduction() {
                             </WorkDetails>
                             <ProfileDetails>
                                 Working as Frontend Developer on ReactJS and as Backend Developer on NodeJs.<br />
-                                    <div style={{ display: "flex",width:"100%",  justifyContent: 'space-between'  }}>
-                                        <div>
-                                            <b>Development</b>
-                                            <Expandable 
-                                                list={["UI / UX","API Integration"]} 
-                                                default={["ReactJS", "Material UI", "Styled Components"]} 
-                                                icons={[<MiniIcons src="/images/ux-design.png"/>,]}
-                                            />
-                                            <b>Project Management</b>
-                                            <ul>
-                                                <li> Jira</li>
-                                                <li> Confluence</li>
-                                                <li> Bitbucket/Github</li>
-                                            </ul>
+                                <div style={{ display: "flex", width: "100%", justifyContent: 'space-between' }}>
+                                    <div>
+                                        <b>Development</b>
+                                        <Expandable
+                                            list={["UI / UX", "API Integration"]}
+                                            default={["ReactJS", "Material UI", "Styled Components"]}
+                                            icons={[<MiniIcons src="/images/ux-design.png" />,]}
+                                        />
+                                        <b>Project Management</b>
+                                        <ul>
+                                            <li> Jira</li>
+                                            <li> Confluence</li>
+                                            <li> Bitbucket/Github</li>
+                                        </ul>
 
-                                        </div>
-                                        <div>
-                                            <b>Deployment</b>
-                                            <Expandable 
-                                            list={["AWS Lamda Functions"]} 
-                                            default={["AWS EC2/ECS", "Jenkins", "Firebase"]} 
-                                            icons={[<MiniIcons src="/images/backend.png"/>]}
-                                            />
-                                            <b>Database</b>
-                                            <ul>
-                                                <li> MongoDB</li>
-                                                <li> Amazon DocumentDB</li>
-                                                <li> SQL</li>
-                                            </ul>
-                                        </div>
                                     </div>
-                               
+                                    <div>
+                                        <b>Deployment</b>
+                                        <Expandable
+                                            list={["AWS Lamda Functions"]}
+                                            default={["AWS EC2/ECS", "Jenkins", "Firebase"]}
+                                            icons={[<MiniIcons src="/images/backend.png" />]}
+                                        />
+                                        <b>Database</b>
+                                        <ul>
+                                            <li> MongoDB</li>
+                                            <li> Amazon DocumentDB</li>
+                                            <li> SQL</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
                             </ProfileDetails>
                         </TabPanel>
                         <TabPanel className={classes.tabsRight} value={value} index={1}>
@@ -347,7 +347,12 @@ export default function Introduction() {
                             </WorkDetails>
                             <ProfileDetails>
                                 Completed Masters with 9.2 CGPA and participated in various events and hackathons during
-                                my two years masters journey.<br />
+                                my two years masters journey. I learned about <b> Algorithm and Design, System Design, 
+                                Data Structures, Automata, Computer Networking and much more.</b> Due to covid, I had enourmous
+                                time in my hand, which I utilized to refine my skills on the topics and practical implementation
+                                of Web Developement.
+
+                                 <br />
                                 <div>
                                     <b>Certifications</b>
                                     <ul>
@@ -364,31 +369,38 @@ export default function Introduction() {
                                             </AnchorLinks>
 
                                         </li>
-                                        {/* <li> Styled Components</li> */}
                                     </ul>
-                                    {/* <b>Deployment</b>
-                                    <ul>
-                                        <li> AWS EC2/ECS</li>
-                                        <li> Jenkins</li>
-                                        <li> AWS Lamda Functions</li>
-                                    </ul> */}
                                 </div>
-
-
+                                <div>
+                                    <b>Projects</b>
+                                    <ul>
+                                        <li>
+                                                PlacementBuddy - Interactive study material web app for placement.
+                                                created with <b> Django-Python, HTML CSS.</b>
+                                        </li>
+                                        <li>
+                                                Feeders - E-FoodDonation web app, can take request from user to pick up
+                                                food from his/her location.<b> Android App with Android Studio, Java.</b>
+                                        </li>
+                                    </ul>
+                                </div>
                             </ProfileDetails>
                         </TabPanel>
                         <TabPanel className={classes.tabsRight} value={value} index={1}>
-                            <WorkDetails>
+                            <WorkDetails style={{ flexDirection: "column" }}>
                                 <CompanyTitle>
                                     <AnchorLinks href="https://www.xebdot.com/" target="_blank">
-                                        XEBDOT TECHNOLOGIES -
+                                        Maharana Pratap College, Vidisha
                                     </AnchorLinks>
                                 </CompanyTitle>
-                                <ProfileTitle> MERN Stack Trainee </ProfileTitle>
+                                <ProfileTitle style={{ marginLeft: "0" }}>Bachelor of Computer Application</ProfileTitle>
                             </WorkDetails>
                             <ProfileDetails>
-                                This is where I started my journey as MERN stack developer. I started with ReactJS UI developer
-                                It was an amazing kickstart as I got to see my work visually and loved working on JSX with JavaScript<br />
+                                There is nothing much to tell about my graduation, Though I did learn about
+                                <b> Fundamentals of Computers, Operating Systems ,Multimedia Systems,
+                                    Understanding Organisational Behaviour, Data and Database Management Systems, Web-Based Application Development
+                                    Computer Lab and Practical Work </b>
+                                 here while doing my graduation.
                                 <div style={{ display: "flex" }}>
                                     <div>
                                         <b>Development</b>
