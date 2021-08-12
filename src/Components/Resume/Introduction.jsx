@@ -10,10 +10,50 @@ import PropTypes from 'prop-types';
 import Switch from '@material-ui/core/Switch';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import Typewriter from 'typewriter-effect';
+import Typewriter from 'typewriter-effect';
 import Expandable from '../common/expandable'
+import GitHubComponent from "./GitHub"
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+
+const ProjectBox = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 500;
+  width: 90%;
+  padding: 25px 20px 25px 20px;
+  position: relative;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+  &:hover{
+    /* border-radius: 24px; */
+background: #e6e6e6;
+box-shadow:  9px 9px 18px #c4c4c4,
+             -9px -9px 18px #ffffff;
+  }
+`;
 
 
+const ClickTrick = styled.div`
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0,0,0,0.5);
+`
+
+const ClickAwayBox = styled.div`
+  display: flex;
+  width: 50%;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  /* position: relative; */
+`
 
 const Header = styled.div`
     display: flex;
@@ -46,6 +86,7 @@ const AboutMe = styled.div`
     font-family: 'Raleway', sans-serif;
     margin-top: 10px;
     width: 100%;
+    min-height:80px;
 `
 const WorkExperience = styled.div`
     font-family: 'Raleway', sans-serif;
@@ -147,6 +188,16 @@ export default function Introduction() {
         setState({ ...state, [event.target.name]: event.target.checked });
     };
 
+    // Projects
+    const [github, setGithub] = React.useState(false);
+
+    const handleClickAwayEvent = () => {
+        setGithub(false);
+    };
+
+    const handleClickEvent = () => {
+        setGithub((prev) => !prev);
+    };
     return (
         <>
             <Header>
@@ -159,19 +210,19 @@ export default function Introduction() {
                     <MiniIcons src="/images/nodejs.svg" />
                 </Title>
                 <AboutMe>
-                    {/* <Typewriter
+                    <Typewriter
                         onInit={(typewriter) => {
                             typewriter.changeDelay("40") 
-                            .typeString(` */}
+                            .typeString(`
                     My name is Aman Sharma, I am having 1+ years of experience as Full Stack Developer.
                     I started my programming journey with C++, where I got to learn the fundamentals.
                     Currently I am working as a MERN Stack Developer. I like developing front-end,
                     as I love when I can visually express my work.
                     `)
-                    {/* .pauseFor(2500)
+                     .pauseFor(2500)
                             .start();
                         }}
-                    /> */}
+                    /> 
                 </AboutMe>
             </Header>
             <WorkExperience>
@@ -347,12 +398,12 @@ export default function Introduction() {
                             </WorkDetails>
                             <ProfileDetails>
                                 Completed Masters with 9.2 CGPA and participated in various events and hackathons during
-                                my two years masters journey. I learned about <b> Algorithm and Design, System Design, 
-                                Data Structures, Automata, Computer Networking and much more.</b> Due to covid, I had enourmous
+                                my two years masters journey. I learned about <b> Algorithm and Design, System Design,
+                                    Data Structures, Automata, Computer Networking and much more.</b> Due to covid, I had enourmous
                                 time in my hand, which I utilized to refine my skills on the topics and practical implementation
                                 of Web Developement.
 
-                                 <br />
+                                <br />
                                 <div>
                                     <b>Certifications</b>
                                     <ul>
@@ -375,12 +426,12 @@ export default function Introduction() {
                                     <b>Projects</b>
                                     <ul>
                                         <li>
-                                                PlacementBuddy - Interactive study material web app for placement.
-                                                created with <b> Django-Python, HTML CSS.</b>
+                                            PlacementBuddy - Interactive study material web app for placement.
+                                            created with <b> Django-Python, HTML CSS.</b>
                                         </li>
                                         <li>
-                                                Feeders - E-FoodDonation web app, can take request from user to pick up
-                                                food from his/her location.<b> Android App with Android Studio, Java.</b>
+                                            Feeders - E-FoodDonation web app, can take request from user to pick up
+                                            food from his/her location.<b> Android App with Android Studio, Java.</b>
                                         </li>
                                     </ul>
                                 </div>
@@ -400,7 +451,7 @@ export default function Introduction() {
                                 <b> Fundamentals of Computers, Operating Systems ,Multimedia Systems,
                                     Understanding Organisational Behaviour, Data and Database Management Systems, Web-Based Application Development
                                     Computer Lab and Practical Work </b>
-                                 here while doing my graduation.
+                                here while doing my graduation.
                                 <div style={{ display: "flex" }}>
                                     <div>
                                         <b>Development</b>
@@ -442,6 +493,44 @@ export default function Introduction() {
                             </WorkDetails>
                         </TabPanel>
                     </div> : ""}
+            </WorkExperience>
+            <WorkExperience>
+                <Title>Certifications</Title>
+                <li>
+                    <AnchorLinks href="https://googlecloudcertified.credential.net/profile/d91945ea426f998f6e4c53868a6f4971d358026e" target="_blank">
+
+                        Google Cloud Certified - Associate Cloud Engineer
+                    </AnchorLinks>
+                </li>
+                <li>
+                    <AnchorLinks href="https://drive.google.com/file/d/12pb8YWWOtGl5VhZcMUcgTiBQR5e6gaqZ/view" target="_blank">
+
+                        Smart India Hackathon
+                    </AnchorLinks>
+
+                </li>
+                <li>
+                    <AnchorLinks href="https://drive.google.com/file/d/19b1ZDG6v4ydH7CaoPNB3qP0_yEQpMqHN/view?" target="_blank">
+
+                        Smart Campus Hackathon
+                    </AnchorLinks>
+
+                </li>
+            </WorkExperience>
+            <WorkExperience>
+                {github && <ClickTrick></ClickTrick>}
+                <ClickAwayListener onClickAway={handleClickAwayEvent}>
+                    <div style={{ width: "100%" }}>
+                        <ProjectBox className={classes.gitButton} onClick={handleClickEvent}>
+                            PROJECTS >>>>>>>>>>>>>>>>>>
+                        </ProjectBox>
+                        {github ? (
+                            <ClickAwayBox>
+                                <GitHubComponent />
+                            </ClickAwayBox>
+                        ) : null}
+                    </div>
+                </ClickAwayListener>
             </WorkExperience>
         </>
 

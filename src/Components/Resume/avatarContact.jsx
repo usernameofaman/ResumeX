@@ -18,27 +18,8 @@ import Typography from "@material-ui/core/Typography";
 import GoogleMapReact from 'google-map-react';
 // Styled Components
 import styled from "styled-components";
-import GitHubComponent from "./GitHub"
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Progress from '../common/progress'
 
-const ClickTrick = styled.div`
-  position:fixed;
-  width: 100%;
-  height: 100%;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background-color: rgba(0,0,0,0.5);
-`
-const ClickAwayBox = styled.div`
-  display: flex;
-  width: 50%;
-  background-color: #e6e6e6;
-  border-radius: 5px;
-  /* position: relative; */
-`
 const AnchorLinks = styled.a`
     text-decoration: none;
     cursor: pointer;
@@ -151,16 +132,7 @@ export default function AvatarContact() {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-  // GitHub PopOver
-  const [github, setGithub] = React.useState(false);
 
-  const handleClickAwayEvent = () => {
-    setGithub(false);
-  };
-
-  const handleClickEvent = () => {
-    setGithub((prev) => !prev);
-  };
 
 
   return (
@@ -212,12 +184,10 @@ export default function AvatarContact() {
           <Typography className={classes.f12}>+91-9827858545</Typography>
         </FlexRow>
 
-        {github && <ClickTrick></ClickTrick>}
 
 
-        <ClickAwayListener onClickAway={handleClickAwayEvent}>
-          <div style={{ width: "100%" }}>
-            <FlexRow className={classes.gitButton} onClick={handleClickEvent}>
+
+            <FlexRow className={classes.gitButton}>
               <Button type="button" className={`${classes.f12} ${classes.button}`}  >
                 <GitHubIcon style={{ width: "20px", marginLeft: "3px" }} />
                 <Typography style={{ marginLeft: "10px" }} className={classes.f12}>
@@ -225,13 +195,7 @@ export default function AvatarContact() {
                 </Typography>
               </Button>
             </FlexRow>
-            {github ? (
-              <ClickAwayBox>
-                <GitHubComponent />
-              </ClickAwayBox>
-            ) : null}
-          </div>
-        </ClickAwayListener>
+
 
 
         <FlexRow>
