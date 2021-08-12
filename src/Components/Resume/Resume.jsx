@@ -86,7 +86,7 @@ const Information = styled.div`
 `
 
 const AltMessage = styled.div`
-  display:flex;
+  display:none;
   font-family: 'Raleway, sans-serif';
   justify-content: center;
   flex-direction: column;
@@ -94,6 +94,9 @@ const AltMessage = styled.div`
   font-size: 32px;
   height: 500px;
   width: 100%;
+  @media(max-width:1200px){
+    display:flex;
+  }
 `
 
 export default function Tasker() {
