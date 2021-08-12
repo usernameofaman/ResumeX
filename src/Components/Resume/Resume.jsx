@@ -14,9 +14,10 @@ import Introduction from "./Introduction";
 
 const useStyles = makeStyles({
   card: {
-    minWidth: 275,
-    width: "60%",
+    // minWidth: 275,
+    width: "1000px",
     height: "1000px",
+    minWidth:"1000px",
     padding: "0px 0px 0px 0px",
   },
   bullet: {

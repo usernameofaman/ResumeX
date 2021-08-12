@@ -110,6 +110,8 @@ const FlexRow = styled.div`
   padding: 5px 0px 5px 0px;
   position: relative;
   height: 30px;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease-in-out;
   &:hover{
     box-shadow:9px 9px 18px #2b384a,-9px -9px 18px #3b4c64;
     color:white;
@@ -129,6 +131,7 @@ const SkillBoxInner = styled.div`
   background-color: #ffffff;
   height: 80%;
   margin: 2px 2px 2px 2px;
+  transition: width 0.3s;
 `
 
 
@@ -245,13 +248,25 @@ export default function AvatarContact() {
       <SkillsSection>
               ReactJS
           <SkillBoxOuter>
-            <SkillBoxInner style={{width: "90%"}}/>
+            <SkillBoxInner style={{width: "80%"}}/>
           </SkillBoxOuter>
               NodeJS
           <SkillBoxOuter>
             <SkillBoxInner style={{width: "70%"}}/>
           </SkillBoxOuter>
               AWS Lamda Functions
+          <SkillBoxOuter>
+            <SkillBoxInner style={{width: "80%"}}/>
+          </SkillBoxOuter>
+              Firebase
+          <SkillBoxOuter>
+            <SkillBoxInner style={{width: "63%"}}/>
+          </SkillBoxOuter>
+              Fronend/UI/UX
+          <SkillBoxOuter>
+            <SkillBoxInner style={{width: "70%"}}/>
+          </SkillBoxOuter>
+              API Integration
           <SkillBoxOuter>
             <SkillBoxInner style={{width: "80%"}}/>
           </SkillBoxOuter>

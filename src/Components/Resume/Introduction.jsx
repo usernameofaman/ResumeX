@@ -11,6 +11,7 @@ import Switch from '@material-ui/core/Switch';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 // import Typewriter from 'typewriter-effect';
+import Expandable from '../common/expandable'
 
 
 
@@ -154,8 +155,8 @@ export default function Introduction() {
                     <AnchorLinkTitle href="https://www.mongodb.com/mern-stack" target="_blank">
                         MERN STACK DEVELOPER
                     </AnchorLinkTitle>
-                    <MiniIcons src="/images/react.svg"/>
-                    <MiniIcons src="/images/nodejs.svg"/>
+                    <MiniIcons src="/images/react.svg" />
+                    <MiniIcons src="/images/nodejs.svg" />
                 </Title>
                 <AboutMe>
                     {/* <Typewriter
@@ -220,38 +221,38 @@ export default function Introduction() {
                             </WorkDetails>
                             <ProfileDetails>
                                 Working as Frontend Developer on ReactJS and as Backend Developer on NodeJs.<br />
-                                <div style={{ display: "flex" }}>
-                                    <div>
-                                        <b>Development</b>
-                                        <ul>
-                                            <li> ReactJS</li>
-                                            <li> Material UI</li>
-                                            <li> Styled Components</li>
-                                        </ul>
-                                        <b>Deployment</b>
-                                        <ul>
-                                            <li> AWS EC2/ECS</li>
-                                            <li> Jenkins</li>
-                                            <li> AWS Lamda Functions</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <b>Project Management</b>
-                                        <ul>
-                                            <li> Jira</li>
-                                            <li> Confluence</li>
-                                            <li> Bitbucket/Github</li>
-                                        </ul>
-                                        <b>Database</b>
-                                        <ul>
-                                            <li> MongoDB</li>
-                                            <li> Amazon DocumentDB</li>
-                                            <li> SQL</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                    <div style={{ display: "flex",width:"100%",  justifyContent: 'space-between'  }}>
+                                        <div>
+                                            <b>Development</b>
+                                            <Expandable 
+                                                list={["UI / UX","API Integration"]} 
+                                                default={["ReactJS", "Material UI", "Styled Components"]} 
+                                                icons={[<MiniIcons src="/images/ux-design.png"/>,]}
+                                            />
+                                            <b>Project Management</b>
+                                            <ul>
+                                                <li> Jira</li>
+                                                <li> Confluence</li>
+                                                <li> Bitbucket/Github</li>
+                                            </ul>
 
-
+                                        </div>
+                                        <div>
+                                            <b>Deployment</b>
+                                            <Expandable 
+                                            list={["AWS Lamda Functions"]} 
+                                            default={["AWS EC2/ECS", "Jenkins", "Firebase"]} 
+                                            icons={[<MiniIcons src="/images/backend.png"/>]}
+                                            />
+                                            <b>Database</b>
+                                            <ul>
+                                                <li> MongoDB</li>
+                                                <li> Amazon DocumentDB</li>
+                                                <li> SQL</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                               
                             </ProfileDetails>
                         </TabPanel>
                         <TabPanel className={classes.tabsRight} value={value} index={1}>
