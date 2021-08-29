@@ -383,9 +383,9 @@ export default function Introduction() {
                             className={classes.tabs}
                             TabIndicatorProps={{ style: { background: '#334257' } }}
                         >
-                            <Tab className={classes.tabsLeft} label="2021.05 - Date.now()" {...a11yProps(0)} />
-                            <Tab className={classes.tabsLeft} label="2020-2021" {...a11yProps(1)} />
-                            <Tab className={classes.tabsLeft} label="2020-2020" {...a11yProps(2)} />
+                            <Tab className={classes.tabsLeft} label="2019.08 - 2021-.07" {...a11yProps(0)} />
+                            <Tab className={classes.tabsLeft} label="2013-2016" {...a11yProps(1)} />
+                            {/* <Tab className={classes.tabsLeft} label="2020-2020" {...a11yProps(2)} /> */}
                         </Tabs>
                         <TabPanel className={classes.tabsRight} value={value} index={0}>
                             <WorkDetails style={{ flexDirection: "column" }}>

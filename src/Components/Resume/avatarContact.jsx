@@ -138,7 +138,7 @@ export default function AvatarContact() {
   return (
     <div>
       <PhotoContainer>
-        <ProfilePicture src="/images/profile_3.jpg" alt="profile" />
+        <ProfilePicture src="/images/aman.jpeg" alt="profile" />
       </PhotoContainer>
       <ContactSection>
         <Typography>Contact</Typography>
