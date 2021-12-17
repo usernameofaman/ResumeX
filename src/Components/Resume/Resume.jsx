@@ -57,9 +57,9 @@ const MainContainer = styled.div`
   justify-content: center;
   background-color: #548CA8;
   padding-top: 20px;
-  @media(max-width:1200px){
+  /* @media(max-width:1200px){
     display:none;
-  }
+  } */
 `;
 const LeftPanel = styled.div`
   display: flex;
@@ -94,9 +94,9 @@ const AltMessage = styled.div`
   font-size: 32px;
   height: 500px;
   width: 100%;
-  @media(max-width:1200px){
+  /* @media(max-width:1200px){
     display:flex;
-  }
+  } */
 `
 
 export default function Tasker() {
