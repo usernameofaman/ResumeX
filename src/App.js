@@ -3,6 +3,7 @@ import Resume from "./Components/Resume"
 import "./App.css"
 
 //This is a comment that i am adding
+// This is a second comment that I am adding
 
 function App() {
     
